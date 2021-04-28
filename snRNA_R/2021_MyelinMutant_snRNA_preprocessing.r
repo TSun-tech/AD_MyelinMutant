@@ -101,7 +101,14 @@ seu
 
 #head(seu@meta.data)
 
+#perform normalization and scaling
+seu<-NormalizeData(seu)
 
+seu<-FindVariableFeatures(seu, selection.method = 'vst',
+                            nfeatures = 3000)
+
+all.genes <- rownames(seu)
+seu <- ScaleData(seu, features = all.genes)
 
 #saveRDS(seu,'/media/tsun/Data/Tsun/Ting/Myelin_mutant/RDS/2020Oct_MyelinMutants_all.rds')
 
