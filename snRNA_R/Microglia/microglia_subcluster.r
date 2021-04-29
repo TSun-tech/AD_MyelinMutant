@@ -254,14 +254,11 @@ for(i in 1:3){
 color<-c("#5445b1", "#749dae", "#E07882")
 
 for (k in 1:3){
-    pdf(file = paste0("/media/tsun/Data/Tsun/Constanze/Manuscript/Figures/MG_CnpKO_MbpKO/Genotype_highlight/2021MyelinMutant_microglia_Genotype_UMAP_",
-                     sample_names[k],".pdf"))
-        print(DimPlot(mic, label=F, group.by="Genotype", 
+  print(DimPlot(mic, label=F, group.by="Genotype", 
         cells.highlight= sampleID_list[[k]], pt.size = 0.01)+ 
               scale_color_manual(labels = c("Other genotype", as.character(sample_names[k])), 
                                  values = c("grey", color[k])) +
               labs(color = "legend title"))
-    dev.off()
     }
 
 
