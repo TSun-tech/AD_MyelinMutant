@@ -1,0 +1,3 @@
+#the current directory contains code myelin mutant and 5xFAD mouse brain microglia (MG)
+#bulk RNA-seq DGE analysis using DESeq2
+#visualization: heatmap, scatterplot, volcano plot
