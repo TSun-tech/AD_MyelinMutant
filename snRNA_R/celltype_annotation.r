@@ -1,4 +1,4 @@
-#2020Jan13, Ting Sun
+#2020, Ting Sun
 #myelin mutants all samples
 #preliminary analysis
 #clustering and cell type annotation
@@ -42,7 +42,7 @@ library(SingleCellExperiment)
 #library(DropSeq.util)
 
 #read in preprocessed Seurat object
-seu<-readRDS("/media/tsun/Data/Tsun/Ting/Myelin_mutant/RDS/2020Oct_MyelinMutants_all.rds")
+seu<-readRDS("./2020Oct_MyelinMutants_all.rds")
 
 #perform dimensionality reduction using PCA with 3000 calculated variable features
 
@@ -74,7 +74,7 @@ DimPlot(object = seu, reduction = 'umap',label = TRUE,
 DefaultAssay(seu)<-"RNA"
 markers_rna<-FindAllMarkers(seu, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 
-write.csv(markers_rna,"/media/tsun/Data/Tsun/Ting/Myelin_mutant/Output/cluster_analysis/2020_MyelingMutants_scRNA_allSamples_res05_cluster_marker_RNA.csv")
+write.csv(markers_rna,"./2020_MyelingMutants_scRNA_allSamples_res05_cluster_marker_RNA.csv")
 
 #chek marker gene table of each cluster in detail and annotate cluster cell type identity
 #mark and remove noisy clusters (potential coublet or apoptotic cells)
@@ -151,8 +151,6 @@ for( k in cell_gene){
 }
 
 
-
-#saveRDS(seu,"/media/tsun/Data/Tsun/Ting/Myelin_mutant/RDS/2020Oct_MyelinMutants_all_cleaned_run2.rds")
 
 
 
