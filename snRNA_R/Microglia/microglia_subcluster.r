@@ -74,7 +74,7 @@ for (gene in c("Mbp","Cnp","Plp1")){
 mic<-RunPCA(mic, features = VariableFeatures(object = mic))
 ElbowPlot(mic, ndims = 50)
 
-#select first 20 PCs for microglia neighbouring embedding
+#select first 15 PCs for microglia neighbouring embedding
 mic<-RunUMAP(mic, dims = 1:15, #set.op.mix.ratio = 0.1, 
               min.dist = 0.3, spread = 0.3, 
               verbose = FALSE)
@@ -134,7 +134,7 @@ DimPlot(mic_new, group.by = "CellType")
 
 mic <- FindNeighbors(object = mic, dims = 1:15)
 
-#test runs suggested clustering at resolution 1.5
+#find cluster
 
 mic <- FindClusters(object = mic, resolution = 1.5)
 table(Idents(mic))
