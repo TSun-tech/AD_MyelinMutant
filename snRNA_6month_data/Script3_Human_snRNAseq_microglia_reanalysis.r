@@ -2,7 +2,7 @@
 #reanalysis of human snRNAseq data microglia subsets
 
 #data collected from Mathys et al 2019 (SYB18485175),
-#and Zhou et al 2020(GSE140511)
+#and Zhou et al 2020(SYN21670836)
 
 #script contains peremetes and filter that used for microglia analysis from both datasets
 
